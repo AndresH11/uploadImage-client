@@ -2,15 +2,15 @@ import axios from 'axios';
 
 const api = axios.create({
   method: 'POST',
-  baseURL: '/upload',
+  baseURL: 'https://uploadiimage.herokuapp.com',
   params: {
-    key: process.env.REACT_APP_KEY || 'ewrp4o¡4X%4o5¡4c5oq04ot5yy86hu658hxj8gjturhpgpañgfçggcxi59hjgxtuh',
+    key: process.env.REACT_APP_KEY,
   },
 });
 
 
 const imageUpload = async (file) => {
-  const { data } = await api('image', {
+  const { data } = await api('upload/image', {
     headers: {
       'Content-Type': 'multipart/form-data'
     },
@@ -20,7 +20,7 @@ const imageUpload = async (file) => {
 };
 
 export const deleteImage = async (id) => {
-  const { data } = await api.delete('delete', {
+  const { data } = await api.delete('upload/delete', {
     headers: {
       'Content-Type': 'application/json',
     },
