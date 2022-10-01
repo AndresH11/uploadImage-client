@@ -1,0 +1,54 @@
+.inputUpload {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.inputUpload label {
+  width: 90%;
+  height: 218.9px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #F6F8FB;
+  border: 1px dashed #97BEF4;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.inputUpload figure {
+  height: 88px;
+  width: 114px;
+}
+
+.inputUpload img {
+  width: 100%;
+  height: 100%;
+}
+
+.inputUpload p {
+  margin-top: 30px;
+  font-family: 'Poppins', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 18px;
+  text-align: center;
+  letter-spacing: -0.035em;
+  color: #BDBDBD;
+}
+
+.viewContainerImage figure {
+  width: 90%;
+  margin: 0 auto;
+  height: 218.9px;
+  border-radius: 12px;
+}
+
+.viewContainerImage img{
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+}
