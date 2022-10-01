@@ -7,6 +7,7 @@ import Preloader from './components/Preloader';
 import LinkUrlImage from './components/LinkUrlImage';
 import InputDelete from './components/InputDelete';
 import { UsePreload } from './hooks/UsePreload';
+import Footer from './components/Footer';
 
 function App() {
   const { preload } = UsePreload();
@@ -30,6 +31,7 @@ function App() {
               }
               <InputDelete />
             </UploadContainer>
+            <Footer />
           </>
           :
           <>
