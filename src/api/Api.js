@@ -2,7 +2,7 @@ import axios from 'axios';
 
 const api = axios.create({
   method: 'POST',
-  baseURL: 'https://uploadiimage.herokuapp.com',
+  baseURL: 'https://uploadiimage.herokuapp.com/',
   params: {
     key: process.env.REACT_APP_KEY,
   },
@@ -16,6 +16,7 @@ const imageUpload = async (file) => {
     },
     data: { imagen: file }
   });
+  
   return data;
 };
 

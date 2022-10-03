@@ -6,46 +6,59 @@ import { UsePreload } from '../hooks/UsePreload';
 const InputUpload = ({ url }) => {
 
   const { preload, setPreload } = UsePreload();
+
   //funcion para subir la imagen
   const handleChange = (e) => {
 
+    //Obteniendo el file
     const file = e.target.files[0];
 
+    //activando la carga de la app
     setPreload({
       ...preload,
       vista1: false
     });
 
+    //funcion para enviar la imagen
     const urlImage = async (file) => {
       try {
         //Validando que haya un archivo
         if (file) {
+          //consiguiendo la respuesta de la api
           const data = await imageUpload(file);
 
           //Validando que no haya error
           if (data.error === '') {
+            //quitanto la carga de la app
             setPreload({
               ...preload,
               vista1: true,
               vista2: false,
               urlpreview: URL.createObjectURL(file),
-              urlOrigin: data.response.url,
+              urlOrigin: data.response.webViewLink,
             });
+
           } else {
             //Suponiendo que hay un error
+            //quitando la carga de la app
             setPreload({
               ...preload,
               vista1: true,
             });
-            alert('lo siento hubo un error');
+            
+            //alerta de error en caso de que haya
+            alert(data.response || 'lo siento hubo un error');
           }
         } else {
+          //alerta de error en caso de que haya
           alert('No enviaste un archivo');
         }
       } catch (error) {
         console.log(error)
       }
     }
+
+    //activando l funcion
     urlImage(file);
   };
 
