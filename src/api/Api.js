@@ -2,7 +2,7 @@ import axios from 'axios';
 
 const api = axios.create({
   method: 'POST',
-  baseURL: 'https://uploadiimage.herokuapp.com/',
+  baseURL: 'https://dawn-carnelian-breadfruit.glitch.me',
   params: {
     key: process.env.REACT_APP_KEY,
   },
